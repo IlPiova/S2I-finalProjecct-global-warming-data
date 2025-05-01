@@ -41,7 +41,7 @@ export default function LineChartComponent({ data }) {
                 stroke="#8884d8"
                 dot={{ r: 0 }}
                 activeDot={{ r: 4 }}
-                strokeWidth={4}
+                strokeWidth={3}
               />
               <Line
                 type="monotone"
