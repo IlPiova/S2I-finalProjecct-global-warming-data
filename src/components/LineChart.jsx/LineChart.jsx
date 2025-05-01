@@ -9,18 +9,15 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+import "./lineChart.scss";
+
 export default function LineChartComponent({ data }) {
   return (
     <>
       {data && (
-        <div
-          className="general-container"
-          style={{ height: "500px", width: "700px" }}
-        >
+        <div className="chart-container">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
-              width={500}
-              height={300}
               data={data}
               margin={{
                 top: 5,
@@ -61,14 +58,3 @@ export default function LineChartComponent({ data }) {
     </>
   );
 }
-
-// const CustomTooltip = ({ active, payload, label }) => {
-//   if (active && payload.lenght && label) {
-//     return (
-//       <div style={{ backColor: "red", width: "45px", height: "25px" }}>
-//         <p>{label}</p>
-//         <p>{label}</p>
-//       </div>
-//     );
-//   }
-// };

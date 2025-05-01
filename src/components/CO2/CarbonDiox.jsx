@@ -13,6 +13,7 @@ export default function CarbonDioxComponent() {
       return {
         average: obj.cycle,
         trend: obj.trend,
+        date: `${obj.day}.${obj.month}.${obj.year}`,
       };
     });
   }

@@ -1,0 +1,12 @@
+@import "../../styles/utility";
+
+.chart-container {
+  //   min-width: 200px;
+  width: 100%;
+  //   max-width: 728;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   margin-bottom: 2em;
+}

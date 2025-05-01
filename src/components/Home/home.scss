@@ -1,13 +1,35 @@
 @import "../../styles/utility";
 
+.general-container {
+  width: 100%;
+  height: auto;
+  column-count: 2;
+  column-width: 40%;
+  .elem-box {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5em;
+    background-color: $secondary-color;
+    color: $primary-color;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+  }
+}
+
 .events-container {
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 0.6em;
   justify-content: center;
   align-items: flex-start;
   .event-container {
+    width: 100%;
     padding: 0.5em;
     display: flex;
     flex-direction: column;
@@ -21,15 +43,14 @@
     .year {
       @extend h1;
       font-size: 8em;
-      color: darken($accent-color, $amount: 40);
-      //   position: relative;
-      //   top: 0;
-      //   left: 0;
+      color: darken($accent-color, $amount: 45);
+      margin-bottom: 0;
     }
     .event-info {
       position: relative;
       top: -5em;
-      left: 0.5em;
+      left: 0.8em;
+      z-index: 1;
       display: flex;
       flex-direction: column;
       gap: 0.6em;
@@ -51,7 +72,7 @@
           text-decoration: none;
           background-color: $accent-color;
           color: $primary-color;
-          padding: 0.2em;
+          padding: 0.2em 0.5em;
           border-radius: 5px;
         }
       }

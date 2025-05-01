@@ -1,9 +1,11 @@
 import Navbar from "../Navbar/Navbar";
 import eventsArr from "../../assets/events.json";
+import { useNavigate } from "react-router";
 
 import "./home.scss";
 
 export default function Home() {
+  let navigate = useNavigate();
   //Funzione per creare la timeline degli eventi principali riguardanti il riscaldamento climatico
   function makeTimeLine() {
     return eventsArr.map((event) => (
@@ -27,16 +29,38 @@ export default function Home() {
   return (
     <>
       <Navbar></Navbar>
-      <h1>Non è troppo tardi!</h1>
+      <h1>Scopri i dati</h1>
       <div className="general-container">
-        <div id="temperatura">Temp</div>
-        <div id="co2">CO2</div>
-        <div id="Met">Metano</div>
-        <div id="no2">NO2</div>
-        <div id="ghiaccio-polare">Ghiaccio</div>
+        <div
+          className="elem-box"
+          id="temperatura"
+          onClick={() => navigate("/temperatura")}
+        >
+          Storico temperatura
+        </div>
+        <div
+          className="elem-box"
+          id="co2"
+          onClick={() => navigate("/anidride-carbonica")}
+        >
+          Concentrazione Anidride Carbonica
+        </div>
+        <div className="elem-box" id="Met" onClick={() => navigate("/metano")}>
+          Concentrazione Metano
+        </div>
+        <div className="elem-box" id="no2" onClick={() => navigate("/azoto")}>
+          Concentrazione NO2
+        </div>
+        <div
+          className="elem-box"
+          id="ghiaccio"
+          onClick={() => navigate("/ghiaccio-antartico")}
+        >
+          Dimensione Ghiaccio Antartico
+        </div>
       </div>
 
-      <h2>Eventi da ricordare</h2>
+      <h1>Eventi da ricordare</h1>
       <div className="events-container">{makeTimeLine()}</div>
     </>
   );

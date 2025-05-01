@@ -13,6 +13,7 @@ export default function TemperatureComponent() {
       return {
         average: obj.station,
         trend: obj.land,
+        date: obj.time,
       };
     });
   }
