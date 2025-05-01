@@ -1,0 +1,60 @@
+@import "../../styles/utility";
+
+.events-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  justify-content: center;
+  align-items: flex-start;
+  .event-container {
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    justify-content: center;
+    align-items: flex-start;
+    &:hover {
+      border: $hover-color solid 1px;
+      border-radius: 1em;
+    }
+    .year {
+      @extend h1;
+      font-size: 8em;
+      color: darken($accent-color, $amount: 40);
+      //   position: relative;
+      //   top: 0;
+      //   left: 0;
+    }
+    .event-info {
+      position: relative;
+      top: -5em;
+      left: 0.5em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6em;
+      justify-content: center;
+      align-items: flex-start;
+      .event-title {
+        @extend .bold;
+        font-size: 1.8em;
+        font-weight: 700;
+      }
+      .event-sources {
+        display: flex;
+        gap: 0.8em;
+        justify-content: center;
+        align-items: center;
+        .source-bubble {
+          font-size: 0.8em;
+          font-weight: 500;
+          text-decoration: none;
+          background-color: $accent-color;
+          color: $primary-color;
+          padding: 0.2em;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

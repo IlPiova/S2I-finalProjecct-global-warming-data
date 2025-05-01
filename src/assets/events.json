@@ -1,0 +1,126 @@
+[
+  {
+    "id": "1",
+    "year": "1824",
+    "event": "Ipotesi dell'effetto serra (Joseph Fourier)",
+    "description": "Il matematico francese Fourier propone per primo l'idea che l'atmosfera terrestre trattenga calore solare, analogamente a una serra, spiegando perché la Terra è più calda di quanto dovrebbe essere",
+    "source": [
+      {
+        "domain": "https://daily.jstor.org/how-19th-century-scientists-predicted-global-warming/",
+        "name": "jstor"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "year": "1896",
+    "event": "Calcoli di Svante Arrhenius sul riscaldamento globale",
+    "description": "Il fisico svedese Arrhenius pubblica il primo modello quantitativo dell'effetto serra, stimando come l'aumento della CO₂ atmosferica possa far crescere la temperatura media terrestre",
+    "source": [
+      {
+        "domain": "https://science.nasa.gov/climate-change/evidence/#:~:text=Svante%20Arrhenius%20first%20predicted%20that,temperature%20through%20the%20greenhouse%20effect",
+        "name": "nasa"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "year": "1958",
+    "event": "Inizio delle misurazioni sistematiche di CO₂ (Charles Keeling)",
+    "description": "Al Mauna Loa Observatory alle Hawaii iniziano le misure continue di concentrazione di CO₂ in atmosfera, grazie al glaciologo Charles David Keeling",
+    "source": [
+      {
+        "domain": "https://gml.noaa.gov/ccgg/trends/#:~:text=The%20graphs%20show%20monthly%20mean,Thoning%2C%201989",
+        "name": "noaa"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "year": "1988",
+    "event": "Creazione dell'IPCC (Panel Intergovernativo sul Clima)",
+    "description": "L'Organizzazione Meteorologica Mondiale (WMO) e il Programma ONU per l'Ambiente (UNEP) istituiscono l'IPCC, con l'obiettivo di valutare periodicamente le conoscenze scientifiche sul clima",
+    "source": [
+      {
+        "domain": "https://www.ipcc.ch/site/assets/uploads/2018/04/FS_timeline.pdf#:~:text=2007%20%20%20%20,Change%202007%3A%20Impacts%2C%20Adaptation%20and",
+        "name": "ipcc"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "year": "1997",
+    "event": "Protocollo di Kyoto",
+    "description": "Adottato l'11 dicembre 1997 in Giappone, è il primo accordo internazionale vincolante sugli obiettivi di riduzione dei gas serra per i Paesi industrializzati",
+    "source": [
+      {
+        "domain": "https://www.isprambiente.gov.it/it/servizi/registro-italiano-emission-trading/aspetti-generali/protocollo-di-kyoto",
+        "name": "isprambiente"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "year": "2003",
+    "event": "Ondata di calore in Europa",
+    "description": "Nell'agosto 2003 un'estrema ondata di caldo colpisce l'Europa. In Francia si stimano oltre 14.800 morti nella sola ondata di fine luglio/agosto; l'eccesso di mortalità complessivo in Europa raggiunge circa 35.000 vittime.L'evento viene successivamente analizzato come primo grande episodio di mortalità da clima estremo europeo",
+    "source": [
+      {
+        "domain": "https://archive.ipcc.ch/publications_and_data/ar4/wg2/en/xccsc1-2-4.html#:~:text=In%20August%202003%2C%20a%20heatwave,exposures%20were%20also%20caused%20or",
+        "name": "ipcc"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "year": "2014",
+    "event": "Marcia mondiale per il clima",
+    "description": "Il 21 settembre 2014 si tiene il “People's Climate March”. A New York partecipano 310.000 persone ed è considerata la più grande protesta per il clima nella storia",
+    "source": [
+      {
+        "domain": "https://www.reuters.com/article/markets/commodities/new-york-climate-march-draws-hundreds-of-thousands-idUSL1N0RM0QQ/#:~:text=Organizers%20estimated%20that%20some%20310%2C000,emissions%20that%20threaten%20the%20environment",
+        "name": "reuters"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "year": "2015",
+    "event": " Accordo di Parigi: ",
+    "description": "Alla COP21 di Parigi (dicembre 2015) 196 nazioni adottano il “Patto di Parigi”, un trattato vincolante (entrato in vigore il 4 novembre 2016) per limitare il riscaldamento globale ben sotto i 2°C, preferibilmente 1,5°C, rispetto all'era preindustriale",
+    "source": [
+      {
+        "domain": "https://www.consilium.europa.eu/it/policies/paris-agreement-climate/#:~:text=L%27accordo%20di%20Parigi%20%C3%A8%20un,per%20combattere%20i%20cambiamenti%20climatici",
+        "name": "consiglio europeo"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "year": "2018",
+    "event": "Nascita di Fridays For Future e Extinction Rebellion",
+    "description": "Il 20 agosto 2018 la studentessa svedese Greta Thunberg sciopera da scuola davanti al Parlamento di Stoccolma per il clima. Nei mesi successivi il suo “sciopero del venerdì” si espande come movimento globale “Fridays for Future”. Sempre nel 2018 nasce il movimento di disobbedienza civile Extinction Rebellion (XR) a Londra, che organizza azioni dirette non violente per chiedere tagli drastici alle emissioni",
+    "source": [
+      {
+        "domain": "https://www.reuters.com/article/world/timeline-greta-thunbergs-rise-from-lone-protester-to-nobel-favorite-idUSKBN1WI1RS/#:~:text=August%2014%2C%202019%3A%20Thunberg%20sets,million%20people%20across%20169%20countries",
+        "name": "reuters"
+      },
+      {
+        "domain": "https://www.reuters.com/article/world/extinction-rebellion-climate-group-seeps-into-oil-rich-middle-east-idUSKBN1XJ0HI/#:~:text=Extinction%20Rebellion%20launched%20in%20London,leading%20to%20thousands%20of%20arrests",
+        "name": "reuters"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "year": "2019",
+    "event": "Scioperi climatici globali",
+    "description": "Tra marzo e settembre 2019 si susseguono grandi manifestazioni giovanili in tutto il mondo. A marzo oltre 2 milioni di studenti scendono in piazza in 135 paesi; ad agosto le cifre salgono a 3,6 milioni in 169 paesi",
+    "source": [
+      {
+        "domain": "https://www.reuters.com/article/world/timeline-greta-thunbergs-rise-from-lone-protester-to-nobel-favorite-idUSKBN1WI1RS/#:~:text=August%2014%2C%202019%3A%20Thunberg%20sets,million%20people%20across%20169%20countries",
+        "name": "reuters"
+      }
+    ]
+  }
+]
