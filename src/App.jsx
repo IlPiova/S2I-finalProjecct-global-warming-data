@@ -1,9 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import ResourcePage from "./components/Resources/ResourcesPage";
-import YourTurnPage from "./components/YourTurn/YourTurnPage";
-// import AllData from "./components/AllData/AllData";
 import Nitro from "./components/NO2/Nitro";
 import PolarIce from "./components/PolarIce/PolarIce";
 import MethaneComponent from "./components/Methane/MethaneComponent";
@@ -15,11 +12,8 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />}>
-            {/* <Route index element={<AllData />} /> */}
-          </Route>
+          <Route path="/" element={<Home />}></Route>
           <Route path="/azoto" element={<Nitro />} />
-          {/* <Route path="/resources" element={<ResourcePage />} /> */}
           <Route path="/ghiaccio-antartico" element={<PolarIce />} />
           <Route path="/metano" element={<MethaneComponent />} />
           <Route path="/temperatura" element={<TemperatureComponent />} />
