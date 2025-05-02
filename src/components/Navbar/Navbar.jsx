@@ -22,10 +22,6 @@ export default function Navbar() {
       <Link className="nav-item" to="/anidride-carbonica">
         CO2{" "}
       </Link>
-
-      <a className="nav-item" href="" target="_blank">
-        My Portfolio
-      </a>
     </ul>
   );
 }

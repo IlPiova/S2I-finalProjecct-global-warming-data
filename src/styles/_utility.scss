@@ -8,6 +8,10 @@ $hover-color: #93d0b6; //Dichiarazione classi comuni
   padding: 0;
   box-sizing: border-box;
 }
+::selection {
+  background: $accent-color;
+  color: $primary-color;
+}
 #root {
   width: 100%;
 }

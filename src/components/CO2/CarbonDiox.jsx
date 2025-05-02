@@ -13,13 +13,15 @@ export default function CarbonDioxComponent() {
       return {
         average: obj.cycle,
         trend: obj.trend,
-        date: `${obj.day}.${obj.month}.${obj.year}`,
+        date: `${obj.year}.${obj.month}.${obj.day}`,
       };
     });
   }
   if (data) {
     chartData = createBetterArr();
   }
+
+  console.log("chartData:", chartData);
 
   return (
     <>
@@ -38,8 +40,6 @@ export default function CarbonDioxComponent() {
         fossili, la deforestazione e l'allevamento hanno aumentato questa cifra
         di <span className="bold"> oltre il 30%</span>.
       </p>
-      <div className="secondary-info"></div>
-      <div className="secondary-info"></div>
     </>
   );
 }

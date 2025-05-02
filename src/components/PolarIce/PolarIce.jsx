@@ -14,8 +14,10 @@ export default function PolarIce() {
         Object.entries(data.arcticData.data)
           //Creazione di un array di oggetti compatibile con il componente LineChart
           .map(([date, values]) => {
+            const year = parseInt(date.slice(0, 4), 10);
+            const month = parseInt(date.slice(4, 6), 10) - 1;
             return {
-              date,
+              date: new Date(year, month),
               average: values.value,
               trend: values.anom,
             };

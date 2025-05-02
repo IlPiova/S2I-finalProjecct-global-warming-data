@@ -22,34 +22,13 @@ export default function LineChartComponent({ data }) {
     }))
   );
   const [filteredData, setFilteredData] = useState(originalData);
-
-  //Ogni volta che uso un filtro il valore di newData cambia, quindi ne salvo una copia in modo da poter annullare le modifiche fatte precedentemente per un nuovo filtro
-
-  // function handleTenYearFilter() {
-  //   setFilteredData(newData);
-  //   const tenYearsDate = new Date(newData[newData.length - 1].date);
-  //   tenYearsDate.setFullYear(tenYearsDate.getFullYear() - 10);
-  //   filteredDate = newData.filter((obj) => obj.date >= tenYearsDate);
-  //   setNewData(filteredDate);
-  //   console.log("ten years", newData);
-  // }
-
-  // function handleOneYearFilter() {
-  //   setNewData(newDataCopy);
-  //   const oneYearDate = new Date(newData[newData.length - 1].date);
-  //   oneYearDate.setFullYear(oneYearDate.getFullYear() - 1);
-  //   filteredDate = newData.filter((obj) => obj.date >= oneYearDate);
-  //   setNewData(filteredDate);
-  //   console.log("ten years", newData);
-  // }
-
+  console.log("originalData:", originalData);
   function handleClickFilter(num) {
     setFilteredData(originalData);
     const finalData = new Date(originalData[originalData.length - 1].date);
     finalData.setMonth(finalData.getMonth() - num);
     const newData = originalData.filter((obj) => obj.date >= finalData);
     setFilteredData(newData);
-    console.log(`${num} mesi`, filteredData);
   }
 
   function handleFilterClick() {
@@ -62,8 +41,6 @@ export default function LineChartComponent({ data }) {
           originalData[originalData.length - 1].date.getTime()
       )
     );
-
-    // console.log("today:", newData);
   }
 
   return (
@@ -71,73 +48,88 @@ export default function LineChartComponent({ data }) {
       {data && (
         <div className="general-container">
           <div className="filters-container">
-            <div
-              className="filter-box"
-              onClick={() => handleClickFilter(12)}
-              id="one-year"
-            >
+            <div className="filter-box" onClick={() => handleClickFilter(12)}>
               Ultimo anno
             </div>
-            <div
-              className="filter-box"
-              onClick={() => handleClickFilter(120)}
-              id="ten-year"
-            >
+            <div className="filter-box" onClick={() => handleClickFilter(120)}>
               Ultimi 10 anni
             </div>
-            <div
-              className="filter-box"
-              onClick={() => handleClickFilter(6)}
-              id="six-month"
-            >
+            <div className="filter-box" onClick={() => handleClickFilter(6)}>
               Ultimi 6 mesi
             </div>
-            <div className="filter-box" onClick={handleFilterClick} id="today">
+            <div className="filter-box" onClick={handleFilterClick}>
               Oggi
             </div>
+            <div
+              className="filter-box"
+              onClick={() => setFilteredData(originalData)}
+            >
+              Completo
+            </div>
           </div>
-          <div className="chart-container">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart
-                data={filteredData}
-                margin={{
-                  top: 5,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="5" />
-                <XAxis
-                  dataKey="date"
-                  tickFormatter={(tick) =>
-                    tick.toLocaleDateString("it-IT", {
-                      year: "numeric",
-                      month: "numeric",
-                    })
-                  }
-                />
-                <YAxis dataKey="average" type="number" />
-                <Tooltip content={<CustomTooltip />} />
-                <Legend />
-                <Line
-                  type="monotone"
-                  dataKey="average"
-                  stroke="#8884d8"
-                  dot={{ r: 0 }}
-                  activeDot={{ r: 4 }}
-                  strokeWidth={3}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="trend"
-                  stroke="#FF4242"
-                  dot={{ r: 0 }}
-                  activeDot={{ r: 4 }}
-                  strokeWidth={2}
-                />
-              </LineChart>
-            </ResponsiveContainer>
+          <div className="data-container">
+            <div className="chart-container">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart
+                  data={filteredData}
+                  margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                  }}
+                >
+                  <CartesianGrid strokeDasharray="5" />
+                  <XAxis
+                    dataKey="date"
+                    tickFormatter={(tick) =>
+                      tick.toLocaleDateString("it-IT", {
+                        year: "numeric",
+                        month: "numeric",
+                      })
+                    }
+                    minTickGap={20}
+                  />
+                  <YAxis
+                    dataKey="average"
+                    type="number"
+                    domain={["dataMin - 5", "dataMax + 5"]}
+                  />
+                  <Tooltip content={<CustomTooltip />} />
+                  <Legend />
+                  <Line
+                    type="monotone"
+                    dataKey="average"
+                    stroke="#8884d8"
+                    dot={{ r: 0 }}
+                    activeDot={{ r: 4 }}
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="trend"
+                    stroke="#FF4242"
+                    dot={{ r: 0 }}
+                    activeDot={{ r: 4 }}
+                    strokeWidth={2}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="secondary-info-container">
+              <div className="secondary-info">
+                <p className="bold">Inizio Registrazioni: </p>
+                <p>{originalData[0].date.toLocaleDateString()}</p>
+              </div>
+              <div className="secondary-info">
+                <p className="bold">Inizio Registrazioni: </p>
+                <p>
+                  {originalData[
+                    originalData.length - 1
+                  ].date.toLocaleDateString()}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       )}
