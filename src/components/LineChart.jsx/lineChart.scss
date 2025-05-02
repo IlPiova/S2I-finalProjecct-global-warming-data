@@ -1,11 +1,37 @@
 @import "../../styles/utility";
 
-.chart-container {
-  width: 100%;
-  height: 40vh;
+.general-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 1em;
 
-  margin-bottom: 2em;
+  justify-content: space-between;
+  align-items: center;
+  .filters-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .chart-container {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 2em;
+  }
+}
+
+.tooltip-container {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  .date-style {
+    @extend .bold;
+    color: $primary-color;
+  }
 }

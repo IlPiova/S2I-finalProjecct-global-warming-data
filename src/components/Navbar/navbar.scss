@@ -1,8 +1,9 @@
 @import "../../styles/utility";
 
 .navbar {
-  width: fit-content;
-  height: auto;
+  width: 90%;
+  height: max-content;
+
   padding: 0.5em;
   position: fixed;
   bottom: 0.8em;
@@ -19,15 +20,18 @@
   .nav-item {
     height: 50px;
     color: $primary-color;
+    padding: 0.4em;
     border-radius: 0.2em;
     text-decoration: none;
-    text-align: center;
     font-weight: 600;
-    font-size: x-small;
+    font-size: xx-small;
     display: flex;
     justify-content: center;
     align-items: center;
 
+    &:hover {
+      border: $primary-color solid 1px;
+    }
     img {
       height: inherit;
       object-fit: cover;

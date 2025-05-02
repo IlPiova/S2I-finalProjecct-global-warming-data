@@ -8,12 +8,20 @@ export default function TemperatureComponent() {
   let chartData;
 
   //Creazione oggetto compatibile con il componente LineChart
+  function realDateCalculator(date) {
+    const [yearStr, percStr] = date.split(".");
+    const year = parseInt(yearStr);
+    const percentage = parseFloat("0." + percStr);
+    const month = Math.floor(percentage * 12);
+    return new Date(year, month);
+  }
+
   function createBetterArr() {
     return data.result.map((obj) => {
       return {
         average: obj.station,
         trend: obj.land,
-        date: obj.time,
+        date: realDateCalculator(obj.time),
       };
     });
   }

@@ -5,6 +5,7 @@ import LineChartComponent from "../LineChart.jsx/LineChart";
 
 export default function MethaneComponent() {
   const { data, error, isLoading } = useGetMetQuery();
+
   return (
     <>
       <Navbar></Navbar>
