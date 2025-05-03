@@ -2,6 +2,8 @@ import { useGetIceQuery } from "../../services/DataQuery";
 import Navbar from "../Navbar/Navbar";
 import Error from "../Error/errorComponent";
 import LineChartComponent from "../LineChart.jsx/LineChart";
+import Loading from "../Loading/LoadingComponent";
+import Footer from "../Footer/FooterComponent";
 
 export default function PolarIce() {
   let chartData, newArr;
@@ -36,29 +38,28 @@ export default function PolarIce() {
       <Navbar></Navbar>
       <h1>Estensione del ghiaccio antartico</h1>
       {error && <Error mex={error.message} />}
-      {isLoading && <p>Loading...</p>}
-
-      {/*Grafico dati comprendente il trend e la quantità del componente */}
-
-      {data && <LineChartComponent data={chartData} />}
-      <p className="description">
-        L'Artico si sta riscaldando circa
-        <span className="bold">
-          due volte più velocemente della media globale
-        </span>{" "}
-        Alcune delle cause di questa situazione sono: l'amplificazione artica,
-        l'effetto albedo e il carbonio nero. Dal 1979 al 1996, abbiamo perso il
-        2,2-3% della copertura di ghiaccio artico. Dal 2010 ad oggi stiamo
-        perdendo il 12,85% per decennio!
-        <br />
-        <br />
-        Ma lo scioglimento dell'Antartico porta a un'altra conseguenza:
-        <span className="bold"> lo scioglimento del permafrost</span> , che
-        porta al rilascio di grandi quantità di metano nell'atmosfera,
-        alimentando maggiormente il processo di riscaldamento globale.
-      </p>
-      <div className="secondary-info"></div>
-      <div className="secondary-info"></div>
+      {isLoading && <Loading />}
+      <div className="info-container">
+        {/* Inserimento grafico */}
+        {data && <LineChartComponent data={chartData} />}
+        <p className="description">
+          L'Artico si sta riscaldando circa
+          <span className="bold">
+            due volte più velocemente della media globale
+          </span>{" "}
+          Alcune delle cause di questa situazione sono: l'amplificazione artica,
+          l'effetto albedo e il carbonio nero. Dal 1979 al 1996, abbiamo perso
+          il 2,2-3% della copertura di ghiaccio artico. Dal 2010 ad oggi stiamo
+          perdendo il 12,85% per decennio!
+          <br />
+          <br />
+          Ma lo scioglimento dell'Antartico porta a un'altra conseguenza:
+          <span className="bold"> lo scioglimento del permafrost</span> , che
+          porta al rilascio di grandi quantità di metano nell'atmosfera,
+          alimentando maggiormente il processo di riscaldamento globale.
+        </p>
+      </div>
+      <Footer />
     </>
   );
 }

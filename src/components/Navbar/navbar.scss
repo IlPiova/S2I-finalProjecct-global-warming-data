@@ -2,8 +2,7 @@
 
 .navbar {
   width: 90%;
-  height: max-content;
-
+  height: fit-content;
   padding: 0.5em;
   position: fixed;
   bottom: 0.8em;
@@ -18,7 +17,7 @@
   border-radius: 0.5em;
   z-index: 99;
   .nav-item {
-    height: 50px;
+    height: auto;
     color: $primary-color;
     padding: 0.4em;
     border-radius: 0.2em;
@@ -28,13 +27,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
 
-    &:hover {
-      border: $primary-color solid 1px;
-    }
-    img {
-      height: inherit;
-      object-fit: cover;
+@media screen and (min-width: 1024px) {
+  .navbar {
+    height: fit-content;
+    width: min-content;
+    position: fixed;
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 5em;
+    .nav-item {
+      font-size: 0.8em;
     }
   }
 }

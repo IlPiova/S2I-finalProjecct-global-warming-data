@@ -1,6 +1,7 @@
 @import "../../styles/utility";
 
 .general-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -14,6 +15,8 @@
     align-items: center;
     gap: 1em;
     .filter-box {
+      font-size: 0.8em;
+      text-align: center;
       padding: 0.5em;
       background-color: $secondary-color;
       color: $primary-color;
@@ -29,7 +32,6 @@
     align-items: center;
     gap: 2em;
 
-    margin-bottom: 2em;
     .chart-container {
       width: 100%;
       height: 60vh;
@@ -39,16 +41,19 @@
       margin-bottom: 2em;
     }
     .secondary-info-container {
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 2em;
+      gap: 4em;
       .secondary-info {
-        width: max-content;
+        width: fit-content;
         height: auto;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
         gap: 0.4em;
       }
     }
@@ -62,5 +67,11 @@
   .date-style {
     @extend .bold;
     color: $primary-color;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .general-container {
+    width: 70%;
   }
 }

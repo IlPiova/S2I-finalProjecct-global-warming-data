@@ -2,6 +2,8 @@ import { useGetTempQuery } from "../../services/DataQuery";
 import Navbar from "../Navbar/Navbar";
 import Error from "../Error/errorComponent";
 import LineChartComponent from "../LineChart.jsx/LineChart";
+import Loading from "../Loading/LoadingComponent";
+import Footer from "../Footer/FooterComponent";
 
 export default function TemperatureComponent() {
   const { data, error, isLoading } = useGetTempQuery();
@@ -32,22 +34,24 @@ export default function TemperatureComponent() {
     <>
       <Navbar></Navbar>
       <h1>Variazione temperature globali</h1>
-      {error && <Error />}
-      {isLoading && <p>Loading...</p>}
+      {error && <Error mex={error.message} />}
+      {isLoading && <Loading />}
+      <div className="info-container">
+        {/*Grafico dati comprendente il trend e la quantità del componente */}
 
-      {/*Grafico dati comprendente il trend e la quantità del componente */}
-
-      {data && <LineChartComponent data={chartData} />}
-      <p className="description">
-        L'aumento totale della temperatura media globale dalla rivoluzione
-        industriale è di circa 1,0°C. L'emisfero settentrionale della Terra si
-        sta riscaldando più velocemente.
-        <span className="bold"> L'Artico si è riscaldato tra 2°C e 4°C.</span>
-        <br />
-        <br />
-        La temperatura terrestre e la proporzione di gas come Co2, metano e
-        protossido di azoto nell'atmosfera sono strettamente correlate.
-      </p>
+        {data && <LineChartComponent data={chartData} />}
+        <p className="description">
+          L'aumento totale della temperatura media globale dalla rivoluzione
+          industriale è di circa 1,0°C. L'emisfero settentrionale della Terra si
+          sta riscaldando più velocemente.
+          <span className="bold"> L'Artico si è riscaldato tra 2°C e 4°C.</span>
+          <br />
+          <br />
+          La temperatura terrestre e la proporzione di gas come Co2, metano e
+          protossido di azoto nell'atmosfera sono strettamente correlate.
+        </p>
+        <Footer />
+      </div>
     </>
   );
 }

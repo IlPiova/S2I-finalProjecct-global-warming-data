@@ -3,6 +3,7 @@ import eventsArr from "../../assets/events.json";
 import { useNavigate } from "react-router";
 
 import "./home.scss";
+import Footer from "../Footer/FooterComponent";
 
 export default function Home() {
   let navigate = useNavigate();
@@ -62,6 +63,7 @@ export default function Home() {
 
       <h1>Eventi da ricordare</h1>
       <div className="events-container">{makeTimeLine()}</div>
+      <Footer />
     </>
   );
 }

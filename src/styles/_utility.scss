@@ -21,7 +21,7 @@ body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   color: $secondary-color;
-  margin: 0em 2em;
+  margin: 2em;
 }
 
 h1 {
@@ -39,6 +39,10 @@ h2 {
   font-weight: 700;
   font-size: 1.6em;
 }
+
+p {
+  line-height: 1.5em;
+}
 .description {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -48,8 +52,39 @@ h2 {
   color: $secondary-color;
 }
 
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+  .description {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1em;
+    color: $secondary-color;
+  }
+}
 .bold {
-  @extend .description;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 1.1em;
   font-weight: 600;
   color: $accent-color;
+}
+@media screen and (min-width: 1024px) {
+  body {
+    margin-left: 8em;
+  }
+  .info-container {
+    align-items: start;
+    flex-direction: row;
+    .description {
+      margin: 0;
+      width: 20%;
+    }
+  }
 }

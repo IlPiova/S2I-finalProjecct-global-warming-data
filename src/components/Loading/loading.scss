@@ -1,0 +1,52 @@
+.border {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 150px;
+  border: 3px solid #2fa36b;
+  height: 190px;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 20px;
+  align-self: center;
+  justify-self: center;
+  margin: 2em;
+  .graph {
+    align-self: end;
+    justify-self: center;
+    height: 150px;
+    background-color: #2fa36b;
+    width: 20px;
+    margin-bottom: 0;
+    animation: width 2.3s infinite;
+  }
+  .graph2 {
+    align-self: end;
+    justify-self: center;
+    height: 150px;
+    background-color: #2fa36b;
+    width: 20px;
+    margin-bottom: 0;
+    animation: width 2.4s infinite;
+  }
+  .graph3 {
+    align-self: end;
+    justify-self: center;
+    height: 150px;
+    background-color: #2fa36b;
+    width: 20px;
+    margin-bottom: 0;
+    animation: width 2.5s infinite;
+  }
+}
+
+@keyframes width {
+  0% {
+    height: 150px;
+  }
+  50% {
+    height: 20px;
+  }
+  100% {
+    heihgt: 150px;
+  }
+}

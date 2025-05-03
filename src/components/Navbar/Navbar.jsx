@@ -13,14 +13,18 @@ export default function Navbar() {
       <Link className="nav-item" to="/ghiaccio-antartico">
         Ghiaccio
       </Link>
+
+      <Link className="nav-item" to="/">
+        HOME
+      </Link>
       <Link className="nav-item" to="/metano">
         Metano
       </Link>
       <Link className="nav-item" to="/temperatura">
-        Temperatura
+        Temp
       </Link>
       <Link className="nav-item" to="/anidride-carbonica">
-        CO2{" "}
+        CO2
       </Link>
     </ul>
   );

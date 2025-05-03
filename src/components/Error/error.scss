@@ -1,0 +1,19 @@
+@import "../../styles/utility";
+.error-container {
+  width: 100%;
+  padding: 2em;
+  background-color: #cd5d5d;
+  color: #ff4242;
+  border: #ff4242 solid 2px;
+  border-radius: 0.5em;
+  .error-message {
+    @extend .bold;
+    color: #ff4242;
+  }
+  .error-button {
+    background-color: #cd5d5d;
+    color: #ff4242;
+    border: #ff4242 solid 1px;
+    border-radius: 0.2em;
+  }
+}
