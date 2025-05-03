@@ -22,7 +22,6 @@
     padding: 0.4em;
     border-radius: 0.2em;
     text-decoration: none;
-    font-weight: 600;
     font-size: xx-small;
     display: flex;
     justify-content: center;
@@ -39,7 +38,7 @@
     top: 50%;
     transform: translateY(-50%);
     flex-direction: column;
-    gap: 5em;
+    gap: 3em;
     .nav-item {
       font-size: 0.8em;
     }

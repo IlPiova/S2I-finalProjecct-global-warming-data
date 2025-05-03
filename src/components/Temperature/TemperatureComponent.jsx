@@ -21,8 +21,8 @@ export default function TemperatureComponent() {
   function createBetterArr() {
     return data.result.map((obj) => {
       return {
-        average: obj.station,
-        trend: obj.land,
+        station: obj.station,
+        land: obj.land,
         date: realDateCalculator(obj.time),
       };
     });
@@ -39,7 +39,13 @@ export default function TemperatureComponent() {
       <div className="info-container">
         {/*Grafico dati comprendente il trend e la quantità del componente */}
 
-        {data && <LineChartComponent data={chartData} />}
+        {data && (
+          <LineChartComponent
+            data={chartData}
+            yLabel={"land"}
+            y2Label={"station"}
+          />
+        )}
         <p className="description">
           L'aumento totale della temperatura media globale dalla rivoluzione
           industriale è di circa 1,0°C. L'emisfero settentrionale della Terra si

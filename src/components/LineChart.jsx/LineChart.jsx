@@ -13,7 +13,11 @@ import { useState } from "react";
 
 import "./lineChart.scss";
 
-export default function LineChartComponent({ data }) {
+export default function LineChartComponent({
+  data,
+  yLabel = "trend",
+  y2Label = "average",
+}) {
   // Funzione per convertire la stringa data in una vera data, servirà per i filtri temporali
   const [originalData, setOriginalData] = useState(
     data.map((obj) => ({
@@ -22,7 +26,6 @@ export default function LineChartComponent({ data }) {
     }))
   );
   const [filteredData, setFilteredData] = useState(originalData);
-  console.log("originalData:", originalData);
   function handleClickFilter(num) {
     setFilteredData(originalData);
     const finalData = new Date(originalData[originalData.length - 1].date);
@@ -48,15 +51,16 @@ export default function LineChartComponent({ data }) {
       {data && (
         <div className="general-container">
           <div className="filters-container">
+            <div className="filter-box" onClick={() => handleClickFilter(6)}>
+              Ultimi 6 mesi
+            </div>
             <div className="filter-box" onClick={() => handleClickFilter(12)}>
               Ultimo anno
             </div>
             <div className="filter-box" onClick={() => handleClickFilter(120)}>
               Ultimi 10 anni
             </div>
-            <div className="filter-box" onClick={() => handleClickFilter(6)}>
-              Ultimi 6 mesi
-            </div>
+
             <div className="filter-box" onClick={handleFilterClick}>
               Oggi
             </div>
@@ -91,7 +95,7 @@ export default function LineChartComponent({ data }) {
                     minTickGap={20}
                   />
                   <YAxis
-                    dataKey="average"
+                    dataKey={yLabel}
                     type="number"
                     domain={["dataMin - 5", "dataMax + 5"]}
                   />
@@ -99,7 +103,7 @@ export default function LineChartComponent({ data }) {
                   <Legend />
                   <Line
                     type="monotone"
-                    dataKey="average"
+                    dataKey={y2Label}
                     stroke="#8884d8"
                     dot={{ r: 0 }}
                     activeDot={{ r: 4 }}
@@ -107,7 +111,7 @@ export default function LineChartComponent({ data }) {
                   />
                   <Line
                     type="monotone"
-                    dataKey="trend"
+                    dataKey={yLabel}
                     stroke="#FF4242"
                     dot={{ r: 0 }}
                     activeDot={{ r: 4 }}

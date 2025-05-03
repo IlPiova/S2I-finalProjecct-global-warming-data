@@ -1,18 +1,22 @@
 @import "../../styles/utility";
 
-.general-container {
+.elem-container {
   width: 100%;
   height: auto;
-  column-count: 2;
-  column-width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 2em;
   .elem-box {
-    width: 45%;
+    width: 100%;
     height: auto;
-    margin-bottom: 0.5em;
     background-color: $secondary-color;
     color: $primary-color;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     padding: 1em;
     border-radius: 0.5em;
@@ -76,6 +80,19 @@
           border-radius: 5px;
         }
       }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home-nav-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 1em;
+    .elem-box {
+      width: 40%;
     }
   }
 }

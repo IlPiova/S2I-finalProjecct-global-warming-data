@@ -20,12 +20,12 @@ export default function PolarIce() {
             const month = parseInt(date.slice(4, 6), 10) - 1;
             return {
               date: new Date(year, month),
-              average: values.value,
-              trend: values.anom,
+              area: values.value,
+              areaMedia: values.monthlyMean,
             };
           })
           //Eliminazione dati non validi dal nuovo array
-          .filter((data) => data.average !== -9999)
+          .filter((data) => data.area !== -9999)
       );
     }
   }
@@ -41,7 +41,13 @@ export default function PolarIce() {
       {isLoading && <Loading />}
       <div className="info-container">
         {/* Inserimento grafico */}
-        {data && <LineChartComponent data={chartData} />}
+        {data && (
+          <LineChartComponent
+            data={chartData}
+            yLabel={"area"}
+            y2Label={"areaMedia"}
+          />
+        )}
         <p className="description">
           L'Artico si sta riscaldando circa
           <span className="bold">

@@ -31,7 +31,7 @@ export default function Home() {
     <>
       <Navbar></Navbar>
       <h1>Scopri i dati</h1>
-      <div className="general-container">
+      <div className="elem-container">
         <div
           className="elem-box"
           id="temperatura"

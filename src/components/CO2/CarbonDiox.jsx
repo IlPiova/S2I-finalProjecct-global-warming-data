@@ -23,8 +23,6 @@ export default function CarbonDioxComponent() {
     chartData = createBetterArr();
   }
 
-  console.log("chartData:", chartData);
-
   return (
     <>
       <Navbar></Navbar>
