@@ -27,8 +27,8 @@
     justify-content: center;
     align-items: center;
     img {
-      width: 100%;
-      height: auto;
+      height: 50px;
+      width: auto;
       object-fit: cover;
     }
   }
@@ -46,6 +46,11 @@
     gap: 3em;
     .nav-item {
       font-size: 0.8em;
+      img {
+        height: 55px;
+        width: auto;
+        object-fit: cover;
+      }
     }
   }
 }

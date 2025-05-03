@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./lineChart.scss";
 
@@ -26,6 +26,9 @@ export default function LineChartComponent({
     }))
   );
   const [filteredData, setFilteredData] = useState(originalData);
+
+  //Funzione usata per filtrare la visualizzazione del grafico: per avere una sola funzione
+  // per 4 filtri, questa funziona tramite il numero di mesi da visualizzare
   function handleClickFilter(num) {
     setFilteredData(originalData);
     const finalData = new Date(originalData[originalData.length - 1].date);
@@ -45,7 +48,10 @@ export default function LineChartComponent({
       )
     );
   }
-
+  //imposto la visualizzazione a 6 mesi al render della pagina
+  useEffect(() => {
+    handleClickFilter(12);
+  }, []);
   return (
     <>
       {data && (
@@ -95,9 +101,9 @@ export default function LineChartComponent({
                     minTickGap={20}
                   />
                   <YAxis
-                    dataKey={yLabel}
+                    // dataKey={yLabel}
                     type="number"
-                    domain={["dataMin - 5", "dataMax + 5"]}
+                    domain={["dataMin - 2", "dataMax + 2"]}
                   />
                   <Tooltip content={<CustomTooltip />} />
                   <Legend />
@@ -126,7 +132,7 @@ export default function LineChartComponent({
                 <p>{originalData[0].date.toLocaleDateString()}</p>
               </div>
               <div className="secondary-info">
-                <p className="bold">Inizio Registrazioni: </p>
+                <p className="bold">Fine Registrazioni: </p>
                 <p>
                   {originalData[
                     originalData.length - 1
