@@ -28,6 +28,7 @@ export default function Nitro() {
           dalle attività umane.
         </p>
       </div>
+
       <Footer />
     </>
   );

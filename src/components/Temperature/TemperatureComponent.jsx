@@ -56,8 +56,8 @@ export default function TemperatureComponent() {
           La temperatura terrestre e la proporzione di gas come Co2, metano e
           protossido di azoto nell'atmosfera sono strettamente correlate.
         </p>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }

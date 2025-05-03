@@ -17,7 +17,7 @@ export default function Footer() {
         <p>
           Per altri progetti come questo{" "}
           <a
-            href="cristian-piovani-portfolio.netlify.app"
+            href="https://cristian-piovani-portfolio.netlify.app"
             target="_blank"
             className="redirect"
           >
