@@ -29,16 +29,19 @@ export default function CarbonDioxComponent() {
       <h1>Concentrazione di anidride carbonica nell'atmosfera</h1>
       {error && <Error mex={error.message} />}
       {isLoading && <Loading />}
-      <div className="info-container">
-        {data && <LineChartComponent data={chartData} />}
-        <p className="description">
-          Per migliaia di anni, la concentrazione naturale di CO2 nell'atmosfera
-          terrestre è stata di circa 280 ppm. Dall'inizio della rivoluzione
-          industriale, le attività umane come la combustione di combustibili
-          fossili, la deforestazione e l'allevamento hanno aumentato questa
-          cifra di <span className="bold"> oltre il 30%</span>.
-        </p>
-      </div>
+      {data && (
+        <div className="info-container">
+          <LineChartComponent data={chartData} />
+          <p className="description">
+            Per migliaia di anni, la concentrazione naturale di CO2
+            nell'atmosfera terrestre è stata di circa 280 ppm. Dall'inizio della
+            rivoluzione industriale, le attività umane come la combustione di
+            combustibili fossili, la deforestazione e l'allevamento hanno
+            aumentato questa cifra di{" "}
+            <span className="bold"> oltre il 30%</span>.
+          </p>
+        </div>
+      )}
       <Footer />
     </>
   );

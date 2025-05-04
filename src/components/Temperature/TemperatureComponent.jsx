@@ -36,27 +36,30 @@ export default function TemperatureComponent() {
       <h1>Variazione temperature globali</h1>
       {error && <Error mex={error.message} />}
       {isLoading && <Loading />}
-      <div className="info-container">
-        {/*Grafico dati comprendente il trend e la quantità del componente */}
+      {data && (
+        <div className="info-container">
+          {/*Grafico dati comprendente il trend e la quantità del componente */}
 
-        {data && (
           <LineChartComponent
             data={chartData}
             yLabel={"land"}
             y2Label={"station"}
           />
-        )}
-        <p className="description">
-          L'aumento totale della temperatura media globale dalla rivoluzione
-          industriale è di circa 1,0°C. L'emisfero settentrionale della Terra si
-          sta riscaldando più velocemente.
-          <span className="bold"> L'Artico si è riscaldato tra 2°C e 4°C.</span>
-          <br />
-          <br />
-          La temperatura terrestre e la proporzione di gas come Co2, metano e
-          protossido di azoto nell'atmosfera sono strettamente correlate.
-        </p>
-      </div>
+
+          <p className="description">
+            L'aumento totale della temperatura media globale dalla rivoluzione
+            industriale è di circa 1,0°C. L'emisfero settentrionale della Terra
+            si sta riscaldando più velocemente.
+            <span className="bold">
+              L'Artico si è riscaldato tra 2°C e 4°C.
+            </span>
+            <br />
+            <br />
+            La temperatura terrestre e la proporzione di gas come Co2, metano e
+            protossido di azoto nell'atmosfera sono strettamente correlate.
+          </p>
+        </div>
+      )}
       <Footer />
     </>
   );

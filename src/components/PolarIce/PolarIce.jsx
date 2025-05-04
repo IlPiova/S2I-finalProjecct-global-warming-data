@@ -39,32 +39,34 @@ export default function PolarIce() {
       <h1>Estensione del ghiaccio antartico</h1>
       {error && <Error mex={error.message} />}
       {isLoading && <Loading />}
-      <div className="info-container">
-        {/* Inserimento grafico */}
-        {data && (
+      {data && (
+        <div className="info-container">
+          {/* Inserimento grafico */}
+
           <LineChartComponent
             data={chartData}
             yLabel={"area"}
             y2Label={"areaMedia"}
           />
-        )}
-        <p className="description">
-          L'Artico si sta riscaldando circa
-          <span className="bold">
-            due volte più velocemente della media globale
-          </span>{" "}
-          Alcune delle cause di questa situazione sono: l'amplificazione artica,
-          l'effetto albedo e il carbonio nero. Dal 1979 al 1996, abbiamo perso
-          il 2,2-3% della copertura di ghiaccio artico. Dal 2010 ad oggi stiamo
-          perdendo il 12,85% per decennio!
-          <br />
-          <br />
-          Ma lo scioglimento dell'Antartico porta a un'altra conseguenza:
-          <span className="bold"> lo scioglimento del permafrost</span> , che
-          porta al rilascio di grandi quantità di metano nell'atmosfera,
-          alimentando maggiormente il processo di riscaldamento globale.
-        </p>
-      </div>
+
+          <p className="description">
+            L'Artico si sta riscaldando circa
+            <span className="bold">
+              due volte più velocemente della media globale
+            </span>{" "}
+            Alcune delle cause di questa situazione sono: l'amplificazione
+            artica, l'effetto albedo e il carbonio nero. Dal 1979 al 1996,
+            abbiamo perso il 2,2-3% della copertura di ghiaccio artico. Dal 2010
+            ad oggi stiamo perdendo il 12,85% per decennio!
+            <br />
+            <br />
+            Ma lo scioglimento dell'Antartico porta a un'altra conseguenza:
+            <span className="bold"> lo scioglimento del permafrost</span> , che
+            porta al rilascio di grandi quantità di metano nell'atmosfera,
+            alimentando maggiormente il processo di riscaldamento globale.
+          </p>
+        </div>
+      )}
       <Footer />
     </>
   );

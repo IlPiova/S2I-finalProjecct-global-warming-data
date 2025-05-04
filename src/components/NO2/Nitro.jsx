@@ -15,19 +15,21 @@ export default function Nitro() {
       {isLoading && <Loading />}
 
       {/*Grafico dati comprendente il trend e la quantità del componente */}
-      <div className="info-container">
-        {data && <LineChartComponent data={data.nitrous} />}
-        <p className="description">
-          Il biossido di azoto è un gas prodotto dalla combustione di
-          combustibili fossili e rifiuti solidi, fertilizzanti a base di azoto,
-          impianti di trattamento delle acque reflue, processi naturali e altre
-          attività agricole e industriali.
-          <br />
-          <br />È il terzo più grande gas che intrappola il calore
-          nell'atmosfera e il più grande composto che distrugge l'ozono emesso
-          dalle attività umane.
-        </p>
-      </div>
+      {data && (
+        <div className="info-container">
+          <LineChartComponent data={data.nitrous} />
+          <p className="description">
+            Il biossido di azoto è un gas prodotto dalla combustione di
+            combustibili fossili e rifiuti solidi, fertilizzanti a base di
+            azoto, impianti di trattamento delle acque reflue, processi naturali
+            e altre attività agricole e industriali.
+            <br />
+            <br />È il terzo più grande gas che intrappola il calore
+            nell'atmosfera e il più grande composto che distrugge l'ozono emesso
+            dalle attività umane.
+          </p>
+        </div>
+      )}
 
       <Footer />
     </>
